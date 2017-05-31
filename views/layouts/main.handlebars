@@ -26,11 +26,14 @@
     <div class="top-bar-right">
       <ul class="menu">
         {{#if user}}
-        <li><a class="custom-navigation__link" href="/">Home</a></li>
+        <!-- <li><a class="custom-navigation__link" href="/">Home</a></li>
         <li><a class="custom-navigation__link" href="#">Nav</a></li>
         {{#eq user.permissions "admin"}}
           <li><a class="custom-navigation__link" href="/admin/users">Users</a></li>
-        {{/eq}}
+        {{/eq}} -->
+          <li><form class="navbar-form" action="/logout" method="POST" >
+            <button type="submit" value="submit" class="button">Log Out</button>
+          </form></li>
         {{/if}}
       </ul>
     </div>

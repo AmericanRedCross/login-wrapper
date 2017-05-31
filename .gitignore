@@ -4,6 +4,8 @@ sessions.db
 public/fonts/*
 !public/fonts/README.md
 public/css/gulp.css
+secure/*
+!secure/README.md
 
 # OS generated files #
 ######################

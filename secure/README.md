@@ -1,0 +1,1 @@
+static site goes here

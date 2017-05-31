@@ -181,7 +181,7 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
+  cookie: { maxAge: 15 * 60 * 1000 } // 15 minutes
 }));
 app.use(flash());
 
@@ -216,12 +216,6 @@ app.post('/logout', function(req, res) {
 	})
 });
 
-app.get('/', function(req, res) {
-		res.render('home',{
-			user:req.user
-		});
-});
-
 app.get('/admin/users', function(req, res) {
   if(req.user && req.user.permissions == "admin") {
     listUsers(function(result) {
@@ -252,6 +246,16 @@ app.post('/admin/user', function(req, res) {
     }
   } else { res.redirect('/admin/users'); }
 });
+
+app.get('/', function(req, res, next) {
+  if (req.user) {
+    next();
+  } else {
+    res.render('home',{ });
+  }
+})
+
+app.use('/', express.static(path.join(__dirname, 'secure', settings.app.route)));
 
 app.listen(settings.app.port, function() {
   console.log('app listening on port ' + settings.app.port);
