@@ -4,13 +4,13 @@
   <h5>Welcome <b>{{user.user}}</b>.</h5>
   <p>You are logged in.</p>
   <p>
-    <form class="navbar-form" action="/logout" method="POST" >
+    <form class="navbar-form" action="{{opts.nginxlocation}}logout" method="POST" >
       <button type="submit" value="submit" class="button">Log Out</button>
     </form>
   </p>
 {{else}}
 
-  	<form action="/login" method="POST">
+  	<form action="{{opts.nginxlocation}}login" method="POST">
       <label> User
         <input type="text" name="user" id="login-user" placeholder="...">
       </label>

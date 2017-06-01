@@ -8,4 +8,8 @@ settings.app = {
   route: '/measles-dashboard/_site/'
 }
 
+settings.page = {
+    nginxlocation: "/measles/"
+}
+
 module.exports = settings;

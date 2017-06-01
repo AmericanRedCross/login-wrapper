@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{opts.nginxlocation}}img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="{{opts.nginxlocation}}images/favicon.ico" type="image/x-icon" />
   <title></title>
 
-  <link rel="stylesheet" href="/css/gulp.css">
+  <link rel="stylesheet" href="{{opts.nginxlocation}}css/gulp.css">
 
 </head>
 <body>
@@ -31,7 +32,7 @@
         {{#eq user.permissions "admin"}}
           <li><a class="custom-navigation__link" href="/admin/users">Users</a></li>
         {{/eq}} -->
-          <li><form class="navbar-form" action="/logout" method="POST" >
+          <li><form class="navbar-form" action="{{opts.nginxlocation}}logout" method="POST" >
             <button type="submit" value="submit" class="button">Log Out</button>
           </form></li>
         {{/if}}
